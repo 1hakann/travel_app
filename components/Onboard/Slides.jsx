@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 const Slides = ({item}) => {
     return (
         <View>
-            <Text>Slides</Text>
+            <Image source={item.image} />
         </View>
     )
 }
