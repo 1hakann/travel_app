@@ -25,7 +25,6 @@ const Onboarding = () => {
 
     return (
         <FlatList
-         style={styles.container}
          pagingEnabled
          horizontal
          showsHorizontalScrollIndicator={false}
