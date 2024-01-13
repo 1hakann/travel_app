@@ -24,7 +24,6 @@ const Onboarding = () => {
     ];
 
     return (
-        //FlatList will become
         <FlatList
          style={styles.container}
          pagingEnabled
@@ -35,7 +34,7 @@ const Onboarding = () => {
          renderItem={({item}) => <Slides item={item} /> }
          >
             <Text>Onboarding</Text>
-        </Fl>
+        </FlatList>
     )
 }
 
