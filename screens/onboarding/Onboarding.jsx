@@ -23,6 +23,7 @@ const Onboarding = () => {
     ];
 
     return (
+        //FlatList will become
         <SafeAreaView style={styles.container}>
             <Text>Onboarding</Text>
         </SafeAreaView>
