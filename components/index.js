@@ -1,7 +1,9 @@
 import Slides from "./Onboard/Slides";
-import Reuseable from "./Reusable/ReusebleText";
+import ReuseableText from "./Reusable/ReusebleText";
+import ReusebleButton from "./Reusable/ReusebleButton";
 
 export {
     Slides,
-    Reuseable
+    ReuseableText,
+    ReusebleButton
 }
