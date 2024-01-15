@@ -13,7 +13,7 @@ const ReusebleButton = ({ onPress, btnText, textColor, width, backgroundColor, b
     )
 }
 
-export default Reuseable;
+export default ReusebleButton;
 
 const styles = StyleSheet.create({
     btnText: (textColor) => ({
