@@ -7,7 +7,7 @@ import { SIZES, COLORS } from '../../constants/theme'
 import { AntDesign } from '@expo/vector-icons'
 import styles from './home.style'
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={reusable.container}>
       <View>
@@ -15,11 +15,13 @@ const Home = () => {
             <ReuseableText 
               text={'Hey User!'}
               family={'Cera Pro Regular'}
-              size={SIZES.xxLarge}
-              color={COLORS.white}
+              size={SIZES.large}
+              color={COLORS.black}
             />
 
-            <TouchableOpacity style={styles.box}>
+            <TouchableOpacity style={styles.box}
+              onPress={() => navigation.navigate('Search')}
+            >
               <AntDesign
                 name='search1'
                 size={26}
