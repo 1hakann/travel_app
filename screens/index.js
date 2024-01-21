@@ -4,6 +4,7 @@ import Profile from "./profile/Profile";
 import Chat from "./chat/Chat";
 import Home from "./home/Home";
 import Search from "./search/Search";
+import Detail from "./details/Detail";
 
 export {
     Onboarding,
@@ -11,5 +12,6 @@ export {
     Profile,
     Chat,
     Home,
-    Search
+    Search,
+    Detail
 }
