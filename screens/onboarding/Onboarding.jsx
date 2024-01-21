@@ -25,24 +25,14 @@ const Onboarding = () => {
 
     return (
         <FlatList
-         pagingEnabled
-         horizontal
-         showsHorizontalScrollIndicator={false}
-         data={slides}
-         keyExtractor={(item) => item.id}
-         renderItem={({item}) => <Slides item={item} /> }
-         >
-            <Text>Onboarding</Text>
-        </FlatList>
+            pagingEnabled
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={slides}
+            keyExtractor={(item) => item.id}
+            renderItem={({item}) => <Slides item={item} /> }
+        />
     )
 }
 
 export default Onboarding;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center'
-    }
-})
