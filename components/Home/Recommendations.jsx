@@ -1,10 +1,12 @@
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import reusable from '../Reusable/reuseable.style';
 import ReuseableText from '../Reusable/ReusebleText';
 import { COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
+import recommendations from '../../data/recommendations';
+import ReuseableTile from '../Reusable/ReuseableTile';
 
 const Recommendations = () => {
   const navigation = useNavigation();
@@ -26,6 +28,17 @@ const Recommendations = () => {
                 />
             </TouchableOpacity>
         </View>
+
+        <FlatList 
+          data={recommendations}
+          horizontal
+          keyExtractor={(item) => item.id }
+          contentContainerStyle={{ columnGap: SIZES.medium }}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({item}) => (
+            <ReuseableTile item={item} onPress={() => {}} />
+          )}
+        />
     </View>
   )
 }
