@@ -32,6 +32,4 @@ const styles = StyleSheet.create({
         borderColor: borderColor,
         borderWidth: borderWidth,
     })
-
-
 })

@@ -1,26 +1,27 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import styles from "./slides.style"
-import { ReuseableText, ReusebleButton } from "../../components/index";
+import { HeightSpacer, ReuseableText, ReusebleButton } from "../../components/index";
 import { COLORS, SIZES } from "../../constants/theme";
 
 const Slides = ({item}) => {
     return (
         <View>
             <Image source={item.image} style={styles.image} />
-            <View>
+            <View style={styles.stack}>
                 <ReuseableText 
-                    style={styles.stack}
                     text={item.title}
-                    family={'Cera Pro Medium'}
-                    size={SIZES.xxLargexLarge}
+                    family={"Cera Pro Medium"}
+                    size={SIZES.xxLarge}
                     color={COLORS.white}
                 />
+
+                <HeightSpacer height={40} />
 
                 <ReusebleButton
                     onPress={() => {}}
                     btnText={"Let's Go"}
-                    width={(SIZES.width-50)/2.2}
+                    width={(SIZES.width-50) / 2.2}
                     backgroundColor={COLORS.red}
                     borderColor={COLORS.red}
                     borderWidth={0}
