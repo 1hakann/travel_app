@@ -40,6 +40,8 @@ const Home = ({ navigation }) => {
             />
         
         <Places />
+
+        <HeightSpacer height={15} />
       </View>
     </SafeAreaView>
   )

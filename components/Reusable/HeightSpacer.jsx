@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const WidthSpacer = ({ width }) => {
+const HeightSpacer = ({ width }) => {
     return (
         <View style={{ width: width }} >
 
@@ -9,7 +9,7 @@ const WidthSpacer = ({ width }) => {
     )
 }
 
-export default WidthSpacer
+export default HeightSpacer
 
 const styles = StyleSheet.create({
 
