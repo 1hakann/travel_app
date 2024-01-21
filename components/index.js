@@ -6,6 +6,7 @@ import WidthSpacer from "./Reusable/HeightSpacer";
 import Places from "./Home/Places";
 import NetworkImage from "./Reusable/NetworkImage";
 import Slides from "./Onboard/Slides";
+import Recommendations from "./Home/Recommendations";
 
 export {
     ReuseableText,
@@ -14,5 +15,6 @@ export {
     WidthSpacer,
     Places,
     NetworkImage,
-    Slides
+    Slides,
+    Recommendations
 }

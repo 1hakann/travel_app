@@ -5,6 +5,7 @@ import Chat from "./chat/Chat";
 import Home from "./home/Home";
 import Search from "./search/Search";
 import Detail from "./details/Detail";
+import Recommended from "./details/Recommended";
 
 export {
     Onboarding,
@@ -13,5 +14,6 @@ export {
     Chat,
     Home,
     Search,
-    Detail
+    Detail,
+    Recommended
 }
