@@ -2,17 +2,17 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 
-const Detail = () => {
+const PlaceDetails = () => {
   const route = useRoute();
-  const { item } = route.params.item;
-  console.log(item)
+  const id = route.params.id;
+
   return (
     <View>
-      <Text>Detail</Text>
+      <Text>PlaceDetails</Text>
     </View>
   )
 }
 
-export default Detail
+export default PlaceDetails
 
 const styles = StyleSheet.create({})

@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import reusable from '../Reusable/reuseable.style';
 import ReuseableText from '../Reusable/ReusebleText';
-import { COLORS, SIZES } from '../../constants/theme';
+import { TEXT, COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
 import recommendations from '../../data/recommendations';
 import ReuseableTile from '../Reusable/ReuseableTile';
@@ -15,9 +15,9 @@ const Recommendations = () => {
     <View style={styles.container}>
         <View style={[reusable.rowWithSpace('space-between'), {paddingBottom: 20}]}>
             <ReuseableText 
-              text={'Places'}
+              text={'Recommendations'}
               family={'Cera Pro Medium'}
-              size={SIZES.large}
+              size={TEXT.large}
               color={COLORS.black}
             />
 
@@ -36,7 +36,7 @@ const Recommendations = () => {
           contentContainerStyle={{ columnGap: SIZES.medium }}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <ReuseableTile item={item} onPress={() => {}} />
+            <ReuseableTile item={item} onPress={() => navigation.navigate('PlaceDetails', item.id)} />
           )}
         />
     </View>
@@ -47,6 +47,7 @@ export default Recommendations
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 30
+        paddingTop: 10,
+        paddingBottom: 10
     }
 })

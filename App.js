@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Onboarding, Search, Detail, Recommended } from './screens';
+import { Onboarding, Search, CountryDetail, Recommended, PlaceDetails, HotelDetail, HotelList, HotelSearch } from './screens';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -34,8 +34,12 @@ export default function App() {
         <Stack.Screen name='Onboard' component={Onboarding} options={{ headerShown: false }} />
         <Stack.Screen name='Bottom' component={BottomTabNavigation} options={{ headerShown: false }} />
         <Stack.Screen name='Search' component={Search} options={{ headerShown: false }} />
-        <Stack.Screen name='Detail' component={Detail} options={{ headerShown: false }} />
+        <Stack.Screen name='CountryDetail' component={CountryDetail} options={{ headerShown: false }} />
         <Stack.Screen name='Recommended' component={Recommended} options={{ headerShown: false }} />
+        <Stack.Screen name='PlaceDetails' component={PlaceDetails} options={{ headerShown: false }} />
+        <Stack.Screen name='HotelDetail' component={HotelDetail} options={{ headerShown: false }} />
+        <Stack.Screen name='HotelList' component={HotelList} options={{ headerShown: false }} />
+        <Stack.Screen name='HotelSearch' component={HotelSearch} options={ {headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
