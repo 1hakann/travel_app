@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const WidthSpacer = ({ height }) => {
+const WidthSpacer = ({ width }) => {
     return (
-        <View style={{ height: height }} >
+        <View style={{ width: width }} >
 
         </View>
     )

@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import reusable from './reuseable.style'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { WidthSpacer } from './WidthSpacer'
+import WidthSpacer from './WidthSpacer'
 import ReuseableText from './ReusebleText'
-import { COLORS } from '../../constants/theme'
 
 const Rating = ({ rating }) => {
   return (
@@ -19,13 +18,13 @@ const Rating = ({ rating }) => {
         <ReuseableText 
             text={rating}
             family={'Cera Pro Medium'}
-            size={14}
-            color={COLORS.gray}
+            size={15}
+            color={"#FD9942"}
         />
     </View>
   )
 }
 
-export default Rating
+export default Rating;
 
 const styles = StyleSheet.create({})
