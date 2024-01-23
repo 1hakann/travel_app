@@ -33,7 +33,7 @@ const BestHotels = () => {
                 horizontal
                 keyExtractor={(item) => item.id}
                 showsHorizontalScrollIndicator
-                contentContainerStyle={{ columnGap: SIZES.medium }}
+                contentContainerStyle={{ columnGap: SIZES.small }}
                 renderItem={({item}) => (
                     <HotelCard item={(item)} margin={10} onPress={() => navigation.navigate('HotelDetail')} />
                 )}

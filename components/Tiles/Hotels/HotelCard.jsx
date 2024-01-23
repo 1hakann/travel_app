@@ -11,12 +11,10 @@ const HotelCard = ({ item, margin }) => {
                 <NetworkImage
                     source={item.imageUrl}
                     width={'80%'}
-                    height={'80%'}
+                    height={'100%'}
                     radius={16}
                 />
             </View>
-
-            <HeightSpacer height={5} />
 
             <View style={{ padding: 10 }}>
                 <ReuseableText
@@ -37,7 +35,7 @@ const HotelCard = ({ item, margin }) => {
 
                 <HeightSpacer height={5} />
 
-                <Rating />
+                <Rating rating={item.rating} />
             </View>
         </View>
     </TouchableOpacity>
@@ -49,7 +47,7 @@ export default HotelCard
 const styles = StyleSheet.create({
     card: (margin) => ({
         width: SIZES.width / 2.2,
-        height: 250,
+        height: 220,
         borderRadius: 16,
         backgroundColor: COLORS.lightWhite,
         marginRight: margin
@@ -58,6 +56,6 @@ const styles = StyleSheet.create({
     imageContainer: {
         alignItems: "center",
         marginTop: 10,
-        height: 150,
+        height: 120,
     }
 })

@@ -5,9 +5,9 @@ import { AppBar, DescriptionText, HeightSpacer, NetworkImage, PopularList, Reuse
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
 import reusable from "../../components/Reusable/reuseable.style";
 import { Feather } from "@expo/vector-icons";
-import countries from "../../data/countries";
+import country from "../../data/country";
 
-const CountryDetail = () => {
+const CountryDetail = ({navigation}) => {
   const route = useRoute();
   const { item } = route.params;
 
@@ -15,7 +15,7 @@ const CountryDetail = () => {
     <ScrollView>
       <View>
       <NetworkImage
-          source={countries.imageUrl}
+          source={country.imageUrl}
           width={"100%"}
           height={350}
           radius={30}
@@ -36,7 +36,7 @@ const CountryDetail = () => {
       <View style={styles.description}>
         <ReuseableText
           text={country.region}
-          family={"medium"}
+          family={"Cera Pro Medium"}
           size={TEXT.xLarge}
           color={COLORS.black}
         />
@@ -49,7 +49,7 @@ const CountryDetail = () => {
             <View style={reusable.rowWithSpace("space-between")}>
             <ReuseableText
               text={"Popular Destinations"}
-              family={"medium"}
+              family={"Cera Pro Medium"}
               size={TEXT.large}
               color={COLORS.black}
             />
@@ -65,7 +65,7 @@ const CountryDetail = () => {
           <PopularList data={country.popular} />
 
           <ReusebleButton
-            onPress={() => navigation.navigate("HotelSearch")}
+            onPress={() => navigation.navigate("HotelSearch", id)}
             btnText={"Find Best Hotels"}
             width={SIZES.width - 40}
             backgroundColor={COLORS.green}

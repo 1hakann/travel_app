@@ -13,7 +13,7 @@ const Recommendations = () => {
 
   return (
     <View style={styles.container}>
-        <View style={[reusable.rowWithSpace('space-between'), {paddingBottom: 20}]}>
+        <View style={[reusable.rowWithSpace('space-between'), {paddingBottom: 10}]}>
             <ReuseableText 
               text={'Recommendations'}
               family={'Cera Pro Medium'}

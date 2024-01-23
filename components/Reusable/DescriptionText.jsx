@@ -13,7 +13,7 @@ export default DescriptionText
 const styles = StyleSheet.create({
     description: {
         paddingVertical: 10,
-        fontFamily: "regular",
+        fontFamily: "Cera Pro Regular",
         textAlign: "justify",
         fontSize: TEXT.medium
     }

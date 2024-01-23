@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import AppBar from '../../components/Reusable/AppBar'
 import ReuseableTile from '../../components/Reusable/ReuseableTile'
-import { COLORS } from '../../constants/theme'
+import { COLORS, SIZES } from '../../constants/theme'
 import recommendations from '../../data/recommendations'
 
 const Recommended = ({navigation}) => {
@@ -22,17 +22,15 @@ const Recommended = ({navigation}) => {
       </View>
 
       <View style={styles.secondView}>
-        <FlatList 
+         <FlatList 
           data={recommendations}
-          keyExtractor={(item) => item.id}
-          renderItem={({item}) => {
-            <View style={{ marginBottom: 10 }}>
-              <ReuseableTile 
-                item={item} 
-                onPress={() => navigation.navigate('PlaceDetails', item.id)}
-              />
-            </View>
-          }}
+          vertical
+          keyExtractor={(item) => item.id }
+          contentContainerStyle={{ rowGap: SIZES.medium }}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => (
+            <ReuseableTile item={item} onPress={() => navigation.navigate('PlaceDetails', item.id)} />
+          )}
         />
       </View>
     </SafeAreaView>

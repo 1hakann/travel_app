@@ -14,7 +14,7 @@ const Home = ({ navigation }) => {
       <View>
         <View style={reusable.rowWithSpace('space-between')}>
             <ReuseableText 
-              text={'Hey User!'}
+              text={'Hi Hakan!'}
               family={'Cera Pro Regular'}
               size={TEXT.large}
               color={COLORS.black}
@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
 
         <ReuseableText 
               text={'Places'}
-              family={'Cera Pro Regular'}
+              family={'Cera Pro Medium'}
               size={SIZES.large}
               color={COLORS.black}
             />
