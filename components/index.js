@@ -14,6 +14,8 @@ import HotelCard from "./Tiles/Hotels/HotelCard";
 import AppBar from "./Reusable/AppBar";
 import DescriptionText from "./Reusable/DescriptionText";
 import PopularList from "./Country/PopularList";
+import HotelMap from "./Hotel/HotelMap";
+import ReviewTile from "./Tiles/Reviews/ReviewTile";
 
 export {
     ReuseableText,
@@ -30,5 +32,7 @@ export {
     HotelCard,
     AppBar,
     DescriptionText,
-    PopularList
+    PopularList,
+    HotelMap,
+    ReviewTile
 }
