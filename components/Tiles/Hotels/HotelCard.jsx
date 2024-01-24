@@ -3,9 +3,9 @@ import React from 'react'
 import { COLORS, SIZES } from '../../../constants/theme'
 import { NetworkImage, HeightSpacer, Rating, ReuseableText } from "../../../components/index";
 
-const HotelCard = ({ item, margin }) => {
+const HotelCard = ({ item, margin, onPress }) => {
   return (
-    <TouchableOpacity style={styles.card(margin)}>
+    <TouchableOpacity style={styles.card(margin)} onPress={onPress}>
         <View>
             <View style={styles.imageContainer}>
                 <NetworkImage
