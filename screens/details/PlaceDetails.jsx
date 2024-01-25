@@ -30,7 +30,7 @@ const PlaceDetails = ({navigation}) => {
           icon={"search1"}
           colorSecond={COLORS.white}
           onPressFirst={() => navigation.goBack()}
-          onPressSecond={() => { }}
+          onPressSecond={() => navigation.navigate('HotelSearch')}
         />
       </View>
 
