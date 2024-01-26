@@ -3,7 +3,7 @@ import React from 'react'
 import reusable from './reuseable.style'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import WidthSpacer from './WidthSpacer'
-import ReuseableText from './ReusebleText'
+import ReuseableText from './ReuseableText'
 
 const Rating = ({ rating }) => {
   return (

@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
-import ReuseableText from '../Reusable/ReusebleText';
+import ReuseableText from '../Reusable/ReuseableText';
 import { COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
 import reusable from '../Reusable/reuseable.style';

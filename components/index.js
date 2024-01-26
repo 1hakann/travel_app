@@ -1,5 +1,5 @@
 
-import ReuseableText from "./Reusable/ReusebleText";
+import ReuseableText from "./Reusable/ReuseableText";
 import ReusebleButton from "./Reusable/ReusebleButton";
 import HeightSpacer from "./Reusable/HeightSpacer";
 import WidthSpacer from "./Reusable/WidthSpacer";
@@ -16,6 +16,7 @@ import DescriptionText from "./Reusable/DescriptionText";
 import PopularList from "./Country/PopularList";
 import HotelMap from "./Hotel/HotelMap";
 import ReviewTile from "./Tiles/Reviews/ReviewTile";
+import ProfileTile from "./Reusable/ProfileTile";
 
 export {
     ReuseableText,
@@ -34,5 +35,6 @@ export {
     DescriptionText,
     PopularList,
     HotelMap,
-    ReviewTile
+    ReviewTile,
+    ProfileTile
 }

@@ -2,7 +2,7 @@ import { StyleSheet, View, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import reusable from '../Reusable/reuseable.style';
-import ReuseableText from '../Reusable/ReusebleText';
+import ReuseableText from '../Reusable/ReuseableText';
 import { TEXT, COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
 import recommendations from '../../data/recommendations';
