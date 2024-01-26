@@ -3,7 +3,7 @@ import React from 'react'
 import reusable from '../Reusable/reuseable.style';
 import { COLORS, TEXT } from '../../constants/theme';
 import { AntDesign } from '@expo/vector-icons';
-import ReuseableText from './ReusebleText';
+import ReuseableText from './ReuseableText';
 
 const AppBar = ({colorFirst, colorSecond, title, icon, onPressFirst, onPressSecond}) => {
   return (
