@@ -1,14 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { COLORS } from "../../constants/theme";
+import { COLORS, SIZES } from "../../constants/theme";
 import reuseable from "./reuseable.style";
 import { AntDesign } from "@expo/vector-icons";
 import WidthSpacer from "./WidthSpacer";
 import ReuseableText from "./ReuseableText";
 
-const ProfileTile = () => {
+const ProfileTile = ({ onPress, title, icon }) => {
   return (
-    <TouchableOpacity style={styles.tile}>
+    <TouchableOpacity style={styles.tile} onPress={onPress}>
       <View style={reuseable.rowWithSpace("space-between")}>
         <View style={reuseable.rowWithSpace("flex-start")}>
           <AntDesign name={icon} size={20} />
