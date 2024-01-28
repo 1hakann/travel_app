@@ -18,6 +18,7 @@ import HotelMap from "./Hotel/HotelMap";
 import ReviewTile from "./Tiles/Reviews/ReviewTile";
 import ProfileTile from "./Reusable/ProfileTile";
 import SettingTile from "./Tiles/Settings/SettingTile";
+import AssetImage from "./Reusable/AssetImage";
 
 export {
     ReuseableText,
@@ -38,5 +39,6 @@ export {
     HotelMap,
     ReviewTile,
     ProfileTile,
-    SettingTile
+    SettingTile,
+    AssetImage
 }
