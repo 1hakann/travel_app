@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Onboarding, Search, CountryDetail, Recommended, PlaceDetails, HotelDetail, HotelList, HotelSearch, SelectRoom, Payments, Settings } from './screens';
+import { Onboarding, Search, CountryDetail, Recommended, PlaceDetails, HotelDetail, HotelList, HotelSearch, SelectRoom, Payments, Settings, SelectedRoom, Successful, Failed } from './screens';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +43,9 @@ export default function App() {
         <Stack.Screen name='SelectRoom' component={SelectRoom} options={ {headerShown: false}}/>
         <Stack.Screen name='Payments' component={Payments} options={ {headerShown: false}}/>
         <Stack.Screen name='Settings' component={Settings} options={ {headerShown: false}}/>
+        <Stack.Screen name='SelectedRoom' component={SelectedRoom} options={ {headerShown: false}}/>
+        <Stack.Screen name='Successful' component={Successful} options={ {headerShown: false}}/>
+        <Stack.Screen name='Failed' component={Failed} options={ {headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
