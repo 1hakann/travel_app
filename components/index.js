@@ -19,6 +19,7 @@ import ReviewTile from "./Tiles/Reviews/ReviewTile";
 import ProfileTile from "./Reusable/ProfileTile";
 import SettingTile from "./Tiles/Settings/SettingTile";
 import AssetImage from "./Reusable/AssetImage";
+import Counter from "./Reusable/Counter";
 
 export {
     ReuseableText,
@@ -40,5 +41,6 @@ export {
     ReviewTile,
     ProfileTile,
     SettingTile,
-    AssetImage
+    AssetImage,
+    Counter
 }
