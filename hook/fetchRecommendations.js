@@ -1,0 +1,37 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const fetchRecommendations = () => {
+    const [recommendations, setRecommendations] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const fetchData = async () => {
+        setIsLoading(true);
+
+        try {
+            const response = await axios.get('http://localhost:5003/api/places?limit=2');
+            console.log(response.data.places);
+            setRecommendations(response.data.places);
+            setIsLoading(false);
+
+        } catch(error) {
+            setError(error);
+        } finally {
+            setIsLoading(false)
+        }
+
+        useEffect(() => {
+            fetchData()
+        }, []);
+    }
+
+    const refetch = () => {
+        setIsLoading(true)
+        fetchData();
+    }
+    
+    return { recommendations, isLoading, error, refetch }
+}   
+
+export default fetchRecommendations;

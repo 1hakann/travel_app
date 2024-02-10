@@ -1,15 +1,21 @@
-import { StyleSheet, View, TouchableOpacity, FlatList } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import reusable from '../Reusable/reuseable.style';
 import ReuseableText from '../Reusable/ReuseableText';
 import { TEXT, COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
-import recommendations from '../../data/recommendations';
+// import recommendations from '../../data/recommendations';
 import ReuseableTile from '../Reusable/ReuseableTile';
+import fetchRecommendations from '../../hook/fetchRecommendations';
 
 const Recommendations = () => {
   const navigation = useNavigation();
+  const { recommendations, isLoading, error, refetch } = fetchRecommendations();
+
+  if(isLoading) {
+    return <ActivityIndicator size={SIZES.xxLarge} color={COLORS.lightBlue} />
+  }
 
   return (
     <View style={styles.container}>
