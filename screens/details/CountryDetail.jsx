@@ -6,10 +6,15 @@ import { COLORS, SIZES, TEXT } from "../../constants/theme";
 import reusable from "../../components/Reusable/reuseable.style";
 import { Feather } from "@expo/vector-icons";
 import country from "../../data/country";
+import fetchCountry from "../../hook/fetchCountry";
 
-const CountryDetail = ({navigation}) => {
+const CountryDetail = ({ navigation }) => {
   const route = useRoute();
-  const { item } = route.params;
+  const id = route.params;
+  console.log(id)
+  
+  const { country, isLoading, error, refetch  } = fetchCountry();
+
 
   return (
     <ScrollView>

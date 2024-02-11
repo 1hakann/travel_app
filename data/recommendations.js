@@ -1,6 +1,6 @@
 const recommendations =  [
     {
-        "id": "1",
+        "_id": "1",
         "country_id": "1",
         "title": "Walt Disney World",
         "location": "U.S.A New York ",
@@ -9,7 +9,7 @@ const recommendations =  [
         "review": "1204 Reviews"
     },
     {
-        "id": "2",
+        "_id": "2",
         "country_id": "2",
         "title": "Statue of Liberty",
         "location": "U.S.A New York ",
@@ -18,7 +18,7 @@ const recommendations =  [
         "review": "1452 Reviews"
     },
     {
-        "id": "3",
+        "_id": "3",
         "country_id": "3",
         "title": "Golden Gate Bridge",
         "location": "U.S.A New York ",
@@ -27,7 +27,7 @@ const recommendations =  [
         "review": "2145 Reviews"
     },
     {
-        "id": "4",
+        "_id": "4",
         "country_id": "4",
         "title": "Yellowstone National Park",
         "location": "U.S.A New York ",
@@ -36,7 +36,7 @@ const recommendations =  [
         "review": "24455 Reviews"
     },
     {
-        "id": "5",
+        "_id": "5",
         "country_id": "5",
         "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/f3f44363-f250-4002-88a8-19fe79169cc7-geyser-yelowstone-burst_h.webp",
         "title": "Yellowstone National Park",

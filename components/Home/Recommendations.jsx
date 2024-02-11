@@ -38,11 +38,11 @@ const Recommendations = () => {
         <FlatList 
           data={recommendations}
           horizontal
-          keyExtractor={(item) => item.id }
+          keyExtractor={(item) => item._id }
           contentContainerStyle={{ columnGap: SIZES.medium }}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <ReuseableTile item={item} onPress={() => navigation.navigate('PlaceDetails', item.id)} />
+            <ReuseableTile item={item} onPress={() => navigation.navigate('PlaceDetails', item._id)} />
           )}
         />
     </View>

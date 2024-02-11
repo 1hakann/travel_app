@@ -8,7 +8,7 @@ const Country = ({ item }) => {
   const navigation = useNavigation();
   
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('CountryDetail', {item})}>
+    <TouchableOpacity onPress={() => navigation.navigate('CountryDetail', item._id)}>
         <View>
             <NetworkImage source={item.imageUrl} width={85} height={85} radius={12} />
             

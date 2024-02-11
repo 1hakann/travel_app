@@ -6,10 +6,13 @@ import { AppBar, DescriptionText, HeightSpacer, NetworkImage, PopularList, Reuse
 import { COLORS, SIZES, TEXT } from '../../constants/theme'
 import reusable from '../../components/Reusable/reuseable.style'
 import { Feather } from '@expo/vector-icons'
+import fetchPlace from '../../hook/fetchPlace'
 
 const PlaceDetails = ({navigation}) => {
   const route = useRoute();
   const id = route.params;
+
+  const { place, isLoading, error, refetch } = fetchPlace(id);
 
   return (
     <ScrollView>

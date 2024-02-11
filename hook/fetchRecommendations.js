@@ -10,9 +10,16 @@ const fetchRecommendations = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.get('http://localhost:5003/api/places?limit=2');
-            console.log(response.data.places);
-            setRecommendations(response.data.places);
+            if (places === 1) {
+                const response = await axios.get('http://localhost:5003/api/places?limit=3');
+                setRecommendations(response.data.places);
+                console.log(response.data.places);
+            } else {
+                const response = await axios.get('http://localhost:5003/api/places');
+                console.log(response.data.places);
+                setRecommendations(response.data.places)
+            }
+           
             setIsLoading(false);
 
         } catch(error) {
@@ -20,11 +27,11 @@ const fetchRecommendations = () => {
         } finally {
             setIsLoading(false)
         }
-
-        useEffect(() => {
-            fetchData()
-        }, []);
     }
+
+    useEffect(() => {
+        fetchData()
+    }, []);
 
     const refetch = () => {
         setIsLoading(true)
