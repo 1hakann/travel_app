@@ -12,13 +12,84 @@ const Registration = () => {
   const [responseData, setResponseData] = useState(null);
   const [obsecureText, setObsecureText] = useState(false);
 
+  const errorLogin = () => {
+    Alert.alert("Invalid Form", "Please provide all required fields", [
+      {
+        text: "Cancel",
+        onPress: () => { },
+      },
+      {
+        text: "Continue",
+        onPress: () => { },
+      },
+      { defaultIndex: 1 },
+    ]);
+  };
+
+  const register = async (values) => {
+    setLoader(true);
+
+    try {
+      const endpoint = "http://localhost:5003/api/register";
+      const data = values;
+
+      const response = await axios.post(endpoint, data);
+      if (response.status === 201) {
+        setLoader(false);
+        Alert.alert("Registration Successful ", "Please provide to login your account ", [
+          {
+            text: "Cancel",
+            onPress: () => { },
+          },
+          {
+            text: "Continue",
+            onPress: () => { },
+          },
+          { defaultIndex: 1 },
+        ]);
+
+
+      } else {
+        Alert.alert("Error Signing in ", "Please provide valid credentials ", [
+          {
+            text: "Cancel",
+            onPress: () => { },
+          },
+          {
+            text: "Continue",
+            onPress: () => { },
+          },
+          { defaultIndex: 1 },
+        ]);
+      }
+    } catch (error) {
+      Alert.alert(
+        "Error ",
+        "Oops, Error logging in try again with correct credentials",
+        [
+          {
+            text: "Cancel",
+            onPress: () => { },
+          },
+          {
+            text: "Continue",
+            onPress: () => { },
+          },
+          { defaultIndex: 1 },
+        ]
+      );
+    } finally {
+      setLoader(false);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Formik
         initialValues={{ email: "", password: "", username: "" }}
         validationSchema={registerSchema}
         onSubmit={(value) => {
-          console.log(value);
+          register(values)
         }}
       >
         {({
@@ -154,7 +225,7 @@ const Registration = () => {
             <HeightSpacer height={20} />
 
             <ReusebleButton
-              onPress={handleSubmit}
+              onPress={isValid? handleSubmit : errorLogin}
               btnText={"REGISTER"}
               width={SIZES.width - 40}
               backgroundColor={COLORS.green}

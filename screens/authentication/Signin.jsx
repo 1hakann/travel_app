@@ -1,4 +1,4 @@
-import { TextInput, Text, View, TouchableOpacity } from "react-native";
+import { TextInput, Text, View, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from "react";
 import styles from "./signin.style";
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
@@ -12,14 +12,77 @@ const Signin = () => {
   const [responseData, setResponseData] = useState(null);
   const [obsecureText, setObsecureText] = useState(false);
 
+  const errorLogin = () => {
+    Alert.alert("Invalid Form", "Please provide all required fields", [
+      {
+        text: "Cancel",
+        onPress: () => {},
+      },
+      {
+        text: "Continue",
+        onPress: () => {},
+      },
+      { defaultIndex: 1 },
+    ]);
+  };
+
+  const login = async (values) => {
+    setLoader(true);
+
+    try {
+      const endpoint = "http://localhost:5003/api/login";
+      const data = values;
+
+      const response = await axios.post(endpoint, data);
+      if (response.status === 200) {
+        setLoader(false);
+        setResponseData(response.data);
+        await AsyncStorage.setItem("id", JSON.stringify(responseData.id));
+        await AsyncStorage.setItem("token", JSON.stringify(responseData.token));
+
+      
+        navigation.replace("Bottom");
+      } else {
+        Alert.alert("Error Logging in ", "Please provide valid credentials ", [
+          {
+            text: "Cancel",
+            onPress: () => {},
+          },
+          {
+            text: "Continue",
+            onPress: () => {},
+          },
+          { defaultIndex: 1 },
+        ]);
+      }
+    } catch (error) {
+      Alert.alert(
+        "Error ",
+        "Oops, Error logging in try again with correct credentials",
+        [
+          {
+            text: "Cancel",
+            onPress: () => {},
+          },
+          {
+            text: "Continue",
+            onPress: () => {},
+          },
+          { defaultIndex: 1 },
+        ]
+      );
+    } finally {
+      setLoader(false);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={signinSchema}
         onSubmit={(value) => {
-          console.log(value);
-
+          login(values);
         }}
       >
         {({
@@ -110,7 +173,7 @@ const Signin = () => {
             <HeightSpacer height={20} />
 
             <ReusebleButton
-              onPress={handleSubmit}
+              onPress={isValid ? handleSubmit : errorLogin}
               btnText={"SIGN IN"}
               width={SIZES.width - 40}
               backgroundColor={COLORS.green}

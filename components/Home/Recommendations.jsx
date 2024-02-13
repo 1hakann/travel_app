@@ -5,16 +5,17 @@ import reusable from '../Reusable/reuseable.style';
 import ReuseableText from '../Reusable/ReuseableText';
 import { TEXT, COLORS, SIZES } from '../../constants/theme';
 import { Feather } from '@expo/vector-icons'
-// import recommendations from '../../data/recommendations';
+import recommendations from '../../data/recommendations';
 import ReuseableTile from '../Reusable/ReuseableTile';
 import fetchRecommendations from '../../hook/fetchRecommendations';
+import HorizontalShimmer from '../Shimmers/HorizontalShimmer';
 
 const Recommendations = () => {
   const navigation = useNavigation();
-  const { recommendations, isLoading, error, refetch } = fetchRecommendations();
+  const { recommendations, isLoading, error, refetch } = fetchRecommendations(1);
 
-  if(isLoading) {
-    return <ActivityIndicator size={SIZES.xxLarge} color={COLORS.lightBlue} />
+  if(isLoading){
+    return <HorizontalShimmer horizontal={true} width={'100%'} height={100} radius={12} paddingTop={15}/>
   }
 
   return (

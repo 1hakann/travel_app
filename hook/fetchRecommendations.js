@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const fetchRecommendations = () => {
+const fetchRecommendations = (places) => {
     const [recommendations, setRecommendations] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -11,12 +11,10 @@ const fetchRecommendations = () => {
 
         try {
             if (places === 1) {
-                const response = await axios.get('http://localhost:5003/api/places?limit=3');
+                const response = await axios.get('https://travelappbackend-production-4ee4.up.railway.app/api/places?limit=3');
                 setRecommendations(response.data.places);
-                console.log(response.data.places);
             } else {
-                const response = await axios.get('http://localhost:5003/api/places');
-                console.log(response.data.places);
+                const response = await axios.get('https://travelappbackend-production-4ee4.up.railway.app/api/places');
                 setRecommendations(response.data.places)
             }
            

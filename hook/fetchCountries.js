@@ -10,7 +10,7 @@ const fetchCountries = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.get('http://localhost:5003/api/countries');
+            const response = await axios.get('https://travelappbackend-production-4ee4.up.railway.app/api/countries');
 
             setCountries(response.data.countries);
             setIsLoading(false);
@@ -20,11 +20,11 @@ const fetchCountries = () => {
         } finally {
             setIsLoading(false)
         }
-
-        useEffect(() => {
-            fetchData()
-        }, []);
     }
+
+    useEffect(() => {
+        fetchData()
+    }, []);
 
     const refetch = () => {
         setIsLoading(true)

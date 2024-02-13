@@ -8,17 +8,31 @@ import styles from './hotelDetail.style';
 import hotel from '../../data/hotel'
 import { Feather } from '@expo/vector-icons'
 import ReviewsList from '../../components/Hotel/ReviewsList'
+import { ActivityIndicator } from "react-native-paper";
+import { useRoute } from "@react-navigation/native";
+import fetchHotelById from '../../hook/fetchHotelById'
+import Loader from '../../components/Shimmers/Loader'
 
 const HotelDetail = ({ navigation }) => {
+  const router = useRoute();
+  const id = router.params;
+  const { hotel, coordinates, isLoading, error, refetch } = fetchHotelById(id);
 
-  let coordinates = {
-    id: hotel.id,
-    title: hotel.title,
-    latitude: hotel.latitude,
-    longitude: hotel.longitude,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01
+  if (isLoading) {
+    return (
+      <Loader />
+    );
   }
+
+
+  // let coordinates = {
+  //   id: hotel.id,
+  //   title: hotel.title,
+  //   latitude: hotel.latitude,
+  //   longitude: hotel.longitude,
+  //   latitudeDelta: 0.01,
+  //   longitudeDelta: 0.01
+  // }
 
   return (
     <ScrollView>
